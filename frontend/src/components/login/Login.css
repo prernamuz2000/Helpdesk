@@ -1,0 +1,55 @@
+.login
+{
+    /* background-image: radial-gradient(circle at center center, rgb(23, 24, 26),rgb(12, 13, 13)); */
+    background: #0B2B47;
+    height: 100vh;
+}
+.login-container
+{
+    display: flex;
+    box-shadow: 0 0 10px 5px rgba(202, 198, 198, 0.3);
+    height:auto;
+    width:1000px;
+    border-radius: 10px;  
+}
+.login-textfield
+{
+    height: 40px;
+    width:300px;
+}
+.login-btn
+{
+    height: 40px;
+    width:300px;
+    /* background-color: #000; */
+    /* margin-left: 1px; */
+}
+.login .eyeicon
+{
+    position:absolute;
+    margin-top: -50px;
+    margin-left: 370px;
+    z-index: 1;
+}
+.login-forgotpass-link
+{
+    margin-left:180px;
+}
+.modal-backdrop.show {
+    backdrop-filter: blur(8px);
+  }
+  .modal-content {
+    width: 400px; 
+    height: 300px; 
+  }
+  .modal-title
+  {
+    
+    font-size: 20px;
+  }
+
+  .black-bg {
+    background-color: black;
+  }
+  
+  

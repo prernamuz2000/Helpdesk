@@ -1,0 +1,50 @@
+/* Header.css */
+
+.top-navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 10px;
+}
+
+.MuiDialog-paper {
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 400px; /* Ensures the dialog doesn't get too wide */
+  width: 100%; /* Makes sure the dialog uses the full available width */
+  overflow: hidden; /* Prevents scrolling */
+}
+
+.MuiDialogTitle-root {
+  font-weight: bold;
+}
+
+.MuiDialogContent-root {
+  padding: 16px;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+.MuiDialogActions-root {
+  padding: 8px 16px;
+}
+
+.MuiIconButton-root {
+  padding: 8px;
+}
+
+.css-1ypvc6e-MuiDrawer-docked .MuiDrawer-paper {
+    width: 60px;
+    box-sizing: border-box;
+    background-color: #0B2B47;
+    color: #fff;
+    margin-top: 64px;
+}

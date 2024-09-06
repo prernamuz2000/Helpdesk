@@ -1,0 +1,38 @@
+/* CreateTicket.css
+
+.create-ticket-container {
+  padding: px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 ;
+  overflow: hidden;
+}
+
+.create-ticket-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.create-ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+}
+
+.create-ticket-form .MuiTextField-root {
+  width: 100%; 
+}
+
+.create-ticket-form .MuiButton-root {
+  align-self: flex-s
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+} */

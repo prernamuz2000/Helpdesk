@@ -1,0 +1,70 @@
+top-nav{
+    display: flex;
+    border-top: 1px solid rgb(232, 229, 229);
+    height: 70px;
+    margin-top: 10px;
+}
+.top-heading{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    width: 100px;
+    /* border: 2px solid black; */
+}
+.heading{
+    color: black;
+    font-size: 20px;
+}
+.top-nav-btns{
+    display:flex;
+    /* border: 2px solid black; */
+    justify-content: right;
+    width: 100%;
+    align-items: center;
+    padding: 15px;
+}
+.focus-mode{
+    outline: 1.5px solid rgb(232, 229, 229);
+border-radius: 5px;
+}
+.doubt{
+    margin-right: 15px;
+
+}
+.add-ticket{
+    margin-left: 15px;
+}
+.mid-nav{
+    
+    border: 1px solid rgb(232, 229, 229);
+    height: 70px;
+    display: flex;
+    text-align: center;
+
+}
+.mid-nav-titles{
+    margin-left: 15px;
+    display: flex;
+    width: 1000px;
+    /* border: 2px solid black; */
+    justify-content: space-between;
+    text-align: center;
+    
+}
+.mid-input{
+    display: flex;
+    /* border: 2px solid black; */
+    align-items: center;
+cursor: pointer;
+
+}
+.input{
+    border: 1px solid rgb(232, 229, 229);
+    height: 40px;
+    border-radius: 5px;
+}
+span{
+  font-size: 15px;
+
+    color: rgb(104, 103, 103) ;
+}

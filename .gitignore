@@ -1,0 +1,20 @@
+# Node modules
+/backend/node_modules/
+/frontend/node_modules/
+/backend/checkgit
+
+# Build directories
+/backend/dist/
+/frontend/my-vite-app/dist/
+
+# IDE files
+.vscode/
+.idea/
+
+# Other build artifacts
+*.bak
+*.tmp
+
+# Build output
+/build/
+/dist/
