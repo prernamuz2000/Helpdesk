@@ -1,38 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Import axios for HTTP requests
 import Layout from '../header/Layout';
-
 import 'bootstrap/dist/css/bootstrap.css';
-import { Typography, Box, Button, IconButton } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import EditIcon from '@mui/icons-material/Edit';
-const rows = [
-  { id: 1, srno: 1, AgentName: 'T123', Role: 'Developer', TotalTicket: 'E123' },
-  { id: 2, srno: 2, AgentName: 'T124', Role: 'Designer', TotalTicket: 'E456' },
-  // Add more rows as needed
-];
 
+// Define the columns for DataGrid without the action column
 const columns = [
   { field: 'srno', headerName: 'Serial No', width: 100, align: 'center', headerAlign: 'center' },
-  { field: 'Agent Name', headerName: 'Agent Name', width: 560, align: 'center', headerAlign: 'center' },
+  { field: 'AgentName', headerName: 'Agent Name', width: 560, align: 'center', headerAlign: 'center' },
   { field: 'Role', headerName: 'Role', width: 200, align: 'center', headerAlign: 'center' },
-  { field: 'Total Tickets', headerName: 'Total Tickets', width: 200, align: 'center', headerAlign: 'center' },
-  {
-    field: 'action',
-    headerName: 'Action',
-    width: 150,
-    renderCell: (params) => (
-      <IconButton color="primary" onClick={() => handleEditTicket(params.row.id)}>
-        <EditIcon />
-      </IconButton>
-    ),
-  },
+  { field: 'TotalTickets', headerName: 'Total Tickets', width: 200, align: 'center', headerAlign: 'center' },
 ];
 
-const handleEditTicket = (id) => {
-  // Implement the edit functionality here
-  console.log('Edit ticket with id:', id);
-};
 const Agents = () => {
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the API when the component mounts
+    const fetchAgents = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/api/tickets/agents');
+        const data = response.data;
+
+        // Transform data to match DataGrid rows format
+        const transformedRows = data.map((agent, index) => ({
+          id: index + 1, // Assign a unique id
+          srno: index + 1,
+          AgentName: agent.name,
+          Role: agent.role,
+          TotalTickets: agent.assignedTickets.length, // Count of open tickets
+        }));
+
+        setRows(transformedRows);
+      } catch (error) {
+        console.error('Error fetching agents:', error);
+      }
+    };
+
+    fetchAgents();
+  }, []);
 
   return (
     <Layout>
@@ -68,7 +75,6 @@ const Agents = () => {
               Agents
             </Typography>
           </Box>
-
         </Box>
         <Box sx={{ height: 550, width: '100%' }}>
           <DataGrid
@@ -94,7 +100,8 @@ const Agents = () => {
           />
         </Box>
       </Box>
-    </Layout>)
+    </Layout>
+  );
 };
 
 export default Agents;

@@ -147,7 +147,7 @@ const AdminTickets = () => {
     {
       field: "category",
       headerName: "Category",
-      flex: 1,
+      flex: 0.5,
       headerAlign: "center",
       align: "center",
     },
@@ -173,7 +173,7 @@ const AdminTickets = () => {
       headerName: "Created By",
       headerAlign: "center",
       align: "center",
-      flex: 1,
+      flex: 1.5,
     },
     {
       field: "assignTo",

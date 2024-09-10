@@ -84,6 +84,23 @@ const edittickets = async (req, res) => {
       // Send comment notification to employee
       await sendUpdateNotification(updatedTicket, "Admin");
     } else {
+      //ticket is assign to new staff.
+
+      // Handle removal from old staff's assignedTickets
+      printRed(
+        `remove ticket code ${ticket.ticketCode} from ${ticket.assignedTo.email}`
+      );
+
+      const currentStaff = await User.findOne({
+        email: ticket.assignedTo.email,
+      });
+      if (currentStaff) {
+        currentStaff.assignedTickets = currentStaff.assignedTickets.filter(
+          (id) => !id.equals(updatedTicket._id)
+        );
+        await currentStaff.save();
+      }
+
       printRed(`Ticket is assign to ${ticket.assignedTo.email}`);
       const staff = await User.findOne({ email: assignedTo.email });
 

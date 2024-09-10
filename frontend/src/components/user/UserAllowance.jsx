@@ -110,7 +110,7 @@ const UserAllowance = () => {
               {
                 field: "srno",
                 headerName: "Sr No.",
-                width: 100,
+                width: 60,
                 align: "center",
                 headerAlign: "center",
               },
@@ -124,7 +124,7 @@ const UserAllowance = () => {
               {
                 field: "AllowanceType",
                 headerName: "Allowance Request",
-                width: 250,
+                width: 164,
                 align: "center",
                 headerAlign: "center",
               },
