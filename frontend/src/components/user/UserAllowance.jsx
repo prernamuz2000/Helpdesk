@@ -22,7 +22,7 @@ const UserAllowance = () => {
       try {
         if (user && user.userId) {
           const response = await axios.get(
-            `http://localhost:3001/allowance/${user.userId}`,
+            `${process.env.REACT_APP_API_BASE_URL}/allowance/${user.userId}`,
             {
               headers: {
                 Authorization: `Bearer ${user.token}`, // Bearer token for authentication
@@ -150,7 +150,7 @@ const UserAllowance = () => {
                       variant="text"
                       onClick={() => {
                         if (fileUrl) {
-                          const backendUrl = `http://localhost:3001${fileUrl}`;
+                          const backendUrl = `${process.env.REACT_APP_API_BASE_URL}${fileUrl}`;
                           window.open(backendUrl, "_blank");
                         }
                       }}

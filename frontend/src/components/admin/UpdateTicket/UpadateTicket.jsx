@@ -17,7 +17,6 @@ import {
 import axios from "axios";
 import "./Upadate.css";
 import { showErrorToast, showSuccesToast } from "../../../utils/toastUtils";
-import usePutApi from "../../../hooks/usePutApi";
 import { useAuth } from "../../../contexts/AuthContext";
 
 const UpdateTicket = ({ open, onClose, ticket }) => {

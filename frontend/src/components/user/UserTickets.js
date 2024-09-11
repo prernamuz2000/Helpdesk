@@ -54,14 +54,14 @@ const UserTickets = () => {
     {
       field: "srno",
       headerName: "Sr. No.",
-      width: 80,
+      width: 0,
       align: "center",
       headerAlign: "center",
     },
     {
       field: "ticketCode",
       headerName: "Ticket Code",
-      width: 170,
+      width: 130,
       align: "center",
       headerAlign: "center",
     },
@@ -266,7 +266,7 @@ const UserTickets = () => {
             </Link>
           </Box>
         </Box>
-        <Box sx={{ height: 550, width: 1200}}>
+        <Box sx={{ height: 550, width: 1200 }}>
           <DataGrid
             rows={rows}
             columns={columns}
