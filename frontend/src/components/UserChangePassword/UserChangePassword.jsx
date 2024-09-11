@@ -98,7 +98,7 @@ const UserChangePassword = () => {
         if (!loading) {
         }
         const response = await axios.post(
-          "http://localhost:3001/api/auth/changePassword",
+          `${process.env.REACT_APP_API_AUTH}/changePassword`,
           {
             empid: user.empid,
             currentPassword: encryptedOldPassword,

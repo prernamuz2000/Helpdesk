@@ -35,7 +35,7 @@ const AssignedTickets = () => {
   async function getTickets() {
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/tickets/assignedTickets/${user.userId}`,
+        `${process.env.REACT_APP_API_TICKET}/tickets/assignedTickets/${user.userId}`,
         {
           headers: {
             Authorization: "Bearer " + user.token,

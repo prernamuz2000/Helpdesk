@@ -99,11 +99,11 @@ const Allowance = () => {
       formData.append("createdby", user.userId);
 
       const response = await axios.post(
-        "http://localhost:3001/attach",
+        `${process.env.REACT_APP_API_BASE_URL}/attach`,
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "multipReact_APP_API_TICKETart/form-data",
             Authorization: `Bearer ${user?.token}`,
           },
         }

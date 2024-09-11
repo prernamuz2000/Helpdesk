@@ -11,7 +11,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     // Get the token from local storage
-    const {user} = useAuth();
+    const { user } = useAuth();
     const token = user.token;
     // If the token exists, include it in the headers
     if (token) {

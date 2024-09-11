@@ -19,7 +19,7 @@ const useForgotPassword = () => {
     try {
       console.log("calling api in hook");
       const response = await axios.post(
-        "http://localhost:3001/api/auth/forgotPassword",
+        `${process.env.REACT_APP_API_AUTH}/forgotPassword`,
         { email }
       );
       console.log("response in forgot password hook", response);

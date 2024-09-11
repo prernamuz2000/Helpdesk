@@ -143,7 +143,7 @@ const UserTickets = () => {
     try {
       console.log("user id", user.userId);
       const response = await axios.get(
-        `http://localhost:3001/tickets/${user.userId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/tickets/${user.userId}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`, // Bearer token for authentication

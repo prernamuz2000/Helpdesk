@@ -91,7 +91,7 @@ const UpdateTicket = ({ open, onClose, ticket }) => {
     setSelectedCategory(ticket?.category);
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/allCategory");
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/allCategory`);
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -106,7 +106,7 @@ const UpdateTicket = ({ open, onClose, ticket }) => {
     const fetchEmails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/emails?category=${selectedCategory}&subcategory=${selectedSubcategory}`
+          `${process.env.REACT_APP_API_BASE_URL}/api/emails?category=${selectedCategory}&subcategory=${selectedSubcategory}`
         );
 
         setEmails(response.data.staffEmails);
@@ -178,7 +178,7 @@ const UpdateTicket = ({ open, onClose, ticket }) => {
       // Perform the PUT request
       setloading(true);
       const response = await axios.put(
-        `http://localhost:3001/admin/editTicket/${ticket.ticketCode}`,
+        `${process.env.REACT_APP_API_BASE_URL}/admin/editTicket/${ticket.ticketCode}`,
         formData,
         {
           headers: {
@@ -343,7 +343,7 @@ const UpdateTicket = ({ open, onClose, ticket }) => {
                   }}
                   onClick={() => {
                     if (ticket?.fileUrl) {
-                      const backendUrl = `http://localhost:3001${ticket?.fileUrl}`;
+                      const backendUrl = `${process.env.REACT_APP_API_BASE_URL}${ticket?.fileUrl}`;
                       window.open(backendUrl, "_blank");
                     }
                   }}

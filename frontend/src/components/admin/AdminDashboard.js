@@ -35,7 +35,7 @@ const AdminDashboard = () => {
         setLoading(true);
         console.log("Fetching status counts...");
         const response = await axios.get(
-          "http://localhost:3001/status-counts",
+          `${process.env.REACT_APP_API_BASE_URL}/status-counts`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`, // Add the token here

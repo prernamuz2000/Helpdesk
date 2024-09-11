@@ -38,7 +38,7 @@ const CreateTicket = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/allCategory");
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/allCategory`);
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -159,7 +159,7 @@ const CreateTicket = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3001/send",
+        `${process.env.REACT_APP_API_BASE_URL}/send`,
         formData,
         {
           headers: {

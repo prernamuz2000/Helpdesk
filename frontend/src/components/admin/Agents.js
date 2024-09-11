@@ -20,7 +20,7 @@ const Agents = () => {
     // Fetch data from the API when the component mounts
     const fetchAgents = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/tickets/agents');
+        const response = await axios.get(`${process.env.REACT_APP_API_TICKET}/tickets/agents`);
         const data = response.data;
 
         // Transform data to match DataGrid rows format

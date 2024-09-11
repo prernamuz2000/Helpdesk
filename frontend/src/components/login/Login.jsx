@@ -104,7 +104,7 @@ export default function Login() {
       try {
         console.log("calling login api");
         const response = await axios.post(
-          "http://localhost:3001/api/auth/login",
+          `${process.env.REACT_APP_API_AUTH}/login`,
           updatedFormData
         );
         console.log("response getting");

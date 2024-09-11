@@ -43,7 +43,7 @@ const UserDashboard = () => {
           setLoading(true);
           console.log("Fetching status counts for user:", userId);
 
-          const response = await axios.get("http://localhost:3001/empstatus", {
+          const response = await axios.get("/empstatus", {
             params: { userId: userId },
             headers: {
               Authorization: `Bearer ${user.token}`, // Include the token in the Authorization header

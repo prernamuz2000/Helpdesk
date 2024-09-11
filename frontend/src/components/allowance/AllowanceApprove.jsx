@@ -24,7 +24,7 @@ const AllowanceApprove = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:3001/allowances/${encodeURIComponent(user.email)}`,
+          `${process.env.REACT_APP_API_BASE_URL}/allowances/${encodeURIComponent(user.email)}`,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
@@ -68,7 +68,7 @@ const AllowanceApprove = () => {
   const handleConfirm = async () => {
     try {
       const decision = actionType === 'Accept' ? 'Accepted' : 'Rejected';
-      await axios.put(`http://localhost:3001/update/${selectedId}`, { decision });
+      await axios.put(`${process.env.REACT_APP_API_BASE_URL}/update/${selectedId}`, { decision });
       setRows((prevRows) =>
         prevRows.map((row) =>
           row.id === selectedId ? { ...row, status: decision } : row
@@ -102,7 +102,7 @@ const AllowanceApprove = () => {
           onClick={() => {
             const fileUrl = params.row.fileinfo?.url;
             if (fileUrl) {
-              const backendUrl = `http://localhost:3001${fileUrl}`;
+              const backendUrl = `${process.env.REACT_APP_API_BASE_URL}${fileUrl}`;
               window.open(backendUrl, "_blank");
             }
           }}
