@@ -18,13 +18,13 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-const coreOptions = {
-  origin: ["http://localhost:3000"], // Allow requests from any origin, replace with specific origins if needed
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+// const coreOptions = {
+//   origin: ["*"], // Allow requests from any origin, replace with specific origins if needed
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ["*"],
+// };
 
-app.use(cors(coreOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
